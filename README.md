@@ -1,23 +1,36 @@
-# MERN CRUD App
+# MERN Stack User Management with Authentication
 
-This is a simple full-stack MERN (MongoDB, Express, React, Node.js) app for managing users.
+A full-stack MERN application for user management with secure authentication and CRUD operations.
 
-## Features
+## ✨ Features
 
-- Add, edit, and delete users
-- Login page (basic authentication)
-- Connected to Render backend
+- User signup and login with JWT-based authentication  
+- Password hashing with bcrypt  
+- Protected dashboard with CRUD operations (Create, Read, Update, Delete)  
+- Responsive UI with Bootstrap  
+- REST API with Express.js and MongoDB  
+- Error handling and success alerts  
 
-## Setup
+## 🛠 Tech Stack
 
-### 1. Backend (Deployed on Render)
-Already deployed:  
-📦 https://mern-crud-ji32.onrender.com
+**Frontend:**  
+- React.js  
+- Bootstrap  
+- Axios  
+- React Router  
 
-### 2. Frontend (React)
+**Backend:**  
+- Node.js  
+- Express.js  
+- MongoDB  
+- Mongoose  
 
-```bash
-git clone https://github.com/your-username/mern-crud-app.git
-cd mern-crud-app
-npm install
-npm start
+**Authentication:**  
+- JWT  
+- bcrypt  
+
+## ⚙️ Setup Instructions
+
+1. **Clone the repository**  
+   ```bash
+   git clone <repo-url>
