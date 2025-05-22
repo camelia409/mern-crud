@@ -1,7 +1,23 @@
-# MERN CRUD Application
+# MERN CRUD App
 
-Welcome to the **MERN CRUD Application**, a simple yet powerful full-stack app built with MongoDB, Express, React, and Node.js. This project demonstrates all CRUD operations (Create, Read, Update, Delete) with an elegant, user-friendly interface and responsive design. The frontend React app interacts seamlessly with the Express backend API, providing a smooth user experience.
+This is a simple full-stack MERN (MongoDB, Express, React, Node.js) app for managing users.
 
-The application features secure login, dynamic data rendering, and strong form validation. Built with clean, modular code, it’s a great starting point for beginners exploring the MERN stack or anyone looking for a solid CRUD template. The app is deployed live at [https://merncrud5.netlify.app](https://merncrud5.netlify.app) — check it out!
+## Features
 
-Feel free to clone the repo, explore the code, and customize it to your needs. Contributions and feedback are welcome! For setup instructions and development, please refer to the project files. Happy coding! 🚀
+- Add, edit, and delete users
+- Login page (basic authentication)
+- Connected to Render backend
+
+## Setup
+
+### 1. Backend (Deployed on Render)
+Already deployed:  
+📦 https://mern-crud-ji32.onrender.com
+
+### 2. Frontend (React)
+
+```bash
+git clone https://github.com/your-username/mern-crud-app.git
+cd mern-crud-app
+npm install
+npm start
