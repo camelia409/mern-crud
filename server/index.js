@@ -1,40 +1,29 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+const express = require('express');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const cors = require('cors');
+
+dotenv.config(); // Load .env
 
 const app = express();
-const PORT = 5000;
-
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
-// Dummy in-memory data
-let users = [];
-let currentId = 1;
+// MongoDB connection
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('✅ MongoDB connected'))
+.catch((err) => console.error('❌ MongoDB connection error:', err));
 
-// Routes
-app.get("/api/users", (req, res) => {
-    res.json(users);
+// Sample route
+app.get('/', (req, res) => {
+  res.send('MERN CRUD API is running...');
 });
 
-app.post("/api/users", (req, res) => {
-    const newUser = { id: currentId++, ...req.body };
-    users.push(newUser);
-    res.status(201).json(newUser);
-});
+// Your CRUD routes here
+// Example: app.use('/api/users', require('./routes/userRoutes'));
 
-app.put("/api/users/:id", (req, res) => {
-    const id = parseInt(req.params.id);
-    users = users.map(u => u.id === id ? { ...u, ...req.body } : u);
-    res.json({ message: "User updated" });
-});
-
-app.delete("/api/users/:id", (req, res) => {
-    const id = parseInt(req.params.id);
-    users = users.filter(u => u.id !== id);
-    res.json({ message: "User deleted" });
-});
-
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
